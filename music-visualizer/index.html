@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON PULSE // Next-Gen Audio Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="grid-overlay"></div>
+    <div class="scanlines"></div>
+
+    <div class="app-container">
+        <header>
+            <div class="glitch-wrapper">
+                <h1 class="glitch" data-text="NEON PULSE">Audio Spectrum</h1>
+            </div>
+            <p class="subtitle">Beat Visualizer</p>
+        </header>
+
+        <div class="canvas-container" id="canvasContainer">
+            <canvas id="visualizerCanvas"></canvas>
+            <div class="bass-glow" id="bassGlow"></div>
+            <div class="ambient-particle-layer"></div>
+        </div>
+
+        <div class="controls-container">
+            <div class="control-row main-actions">
+                <label for="audioUpload" class="custom-file-upload">
+                    <span>LOAD AUDIO TRACK</span>
+                </label>
+                <input type="file" id="audioUpload" accept="audio/*">
+                
+                <button id="playPauseBtn" class="btn-primary" disabled>PLAY</button>
+                <button id="fullscreenBtn" class="btn-secondary">FULL SCREEN</button>
+            </div>
+
+            <div class="control-row volume-zone">
+                <span class="vol-icon">MUTE</span>
+                <div class="slider-wrapper">
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.7">
+                    <div class="slider-progress"></div>
+                </div>
+                <span class="vol-icon">MAX</span>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audioSource"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
